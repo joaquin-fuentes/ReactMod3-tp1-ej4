@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap"
 import './App.css'
+import Formulario from './components/Formulario';
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
         <h1 className='display-4 text-center'>Lista de Tareas</h1>
         <hr/>
         {/* aqui va el formulario */}
+        <Formulario></Formulario>
       </Container>
       <Footer></Footer>
     </>
