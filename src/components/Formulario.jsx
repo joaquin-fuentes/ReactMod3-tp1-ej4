@@ -7,14 +7,23 @@ const Formulario = () => {
     const [tarea, setTarea] = useState("");
     const [listadoTareas, setListadoTareas] = useState([]);
 
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (tarea.trim() !== "") {
+        setListadoTareas([...listadoTareas, tarea]);
+        setTarea("");
+        }
+    };
+    console.log("listado de tareas: "+ listadoTareas)
+
     return (
         <section>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3 d-flex" controlId="tarea">
                     <Form.Control type="text"  placeholder="Ingrese una tarea"
                     onChange={(e)=> setTarea(e.target.value)}
                     value={tarea} />
-                    {/* Agregar evento submit para guardar tarea en listado de tareas */}
                  
                     <Button variant="primary" type="submit" className='mx-2'>
                        Enviar
