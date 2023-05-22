@@ -15,7 +15,6 @@ const Formulario = () => {
         setTarea("");
         }
     };
-    console.log("listado de tareas: "+ listadoTareas)
 
     return (
         <section>
@@ -30,7 +29,7 @@ const Formulario = () => {
                     </Button>
                 </Form.Group>
             </Form>
-            <ListaTareas></ListaTareas>
+            <ListaTareas listadoTareas={listadoTareas}></ListaTareas>
         </section>
     );
 };
