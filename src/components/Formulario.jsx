@@ -1,6 +1,7 @@
 import {Form, Button} from 'react-bootstrap';
 import ListaTareas from './ListaTareas';
 import { useState } from 'react';
+import ItemTarea from './ItemTarea';
 
 const Formulario = () => {
 
@@ -16,6 +17,11 @@ const Formulario = () => {
         }
     };
 
+    const borrarTarea = (nombreTarea)=>{
+        let arregloFiltrado = listadoTareas.filter((itemTarea)=>itemTarea !== nombreTarea)
+        setListadoTareas(arregloFiltrado)
+    }
+
     return (
         <section>
             <Form onSubmit={handleSubmit}>
@@ -29,7 +35,7 @@ const Formulario = () => {
                     </Button>
                 </Form.Group>
             </Form>
-            <ListaTareas listadoTareas={listadoTareas}></ListaTareas>
+            <ListaTareas borrarTarea={borrarTarea} listadoTareas={listadoTareas}></ListaTareas>
         </section>
     );
 };
